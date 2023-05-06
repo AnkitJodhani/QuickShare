@@ -28,7 +28,7 @@ app.use('/public',express.static('public'));
 app.set('views', path.join(__dirname,'/views'));
 app.set('view engine','ejs');
 
-app.use('/',(req,res,next)=>{
+app.get('/',(req,res,next)=>{
     res.status(200).json({
         message:"Welcome developer",
         status:200,
