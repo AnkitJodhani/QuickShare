@@ -6,6 +6,7 @@
   "author": "Ankit Jodhani",
   "license": "MIT",
   "scripts": {
+    "start": "node index.js",
     "dev": "nodemon index.js",
     "serve": "node index.js"
   },
