@@ -12,7 +12,7 @@ const filesRoute = require('./routes/files');
 dotenv.config();
 app.use(cors());
 
-connectDB();
+// connectDB();
 app.use(morgan('common'));
 app.use(express.json());
 
@@ -28,7 +28,13 @@ app.use('/files',filesRoute);
 
 
 const PORT = process.env.PORT || 3000;
-app.listen(PORT,()=>{
-    console.log(`Server is listening on Port : ${PORT}`);
-})
+// app.listen(PORT,()=>{
+//     console.log(`Server is listening on Port : ${PORT}`);
+// })
 
+
+connectDB().then(() => {
+    app.listen(PORT, () => {
+        console.log("listening for requests");
+    })
+})
