@@ -2,13 +2,13 @@
   "name": "QuickShare",
   "version": "1.0.0",
   "description": "It will be use to share file anywhere on internet",
-  "main": "server.js",
+  "main": "index.js",
   "author": "Ankit Jodhani",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
-    "dev": "nodemon server.js",
-    "serve": "node server.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "serve": "node indexgit .js"
   },
   "dependencies": {
     "aws-sdk": "^2.1354.0",
