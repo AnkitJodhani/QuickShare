@@ -20,7 +20,12 @@ app.use('/public',express.static('public'));
 app.set('views', path.join(__dirname,'/views'));
 app.set('view engine','ejs');
 
-
+app.use('/',(req,res,next)=>{
+    res.status(200).json({
+        message:"Welcome developer",
+        status:200
+    })
+})
 
 app.use('/api/files',filesRoute);
 app.use('/files',filesRoute);
