@@ -12,7 +12,10 @@ const filesRoute = require('./routes/files');
 dotenv.config();
 app.use(cors());
 
-connectDB();
+let dbStatus = false;
+connectDB().then((result)=>{
+    dbStatus = result
+});
 app.use(morgan('common'));
 app.use(express.json());
 
@@ -23,7 +26,8 @@ app.set('view engine','ejs');
 app.use('/',(req,res,next)=>{
     res.status(200).json({
         message:"Welcome developer",
-        status:200
+        status:200,
+        databaseStatus: dbStatus
     })
 })
 
